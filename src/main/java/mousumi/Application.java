@@ -1,3 +1,6 @@
+/***
+ * Copyright (c) 2020  Mousumi Inc  hazarika.mousumi.ghy@gmail.com
+ */
 package mousumi;
 
 import org.springframework.boot.SpringApplication;
@@ -11,7 +14,7 @@ public class Application {
 
   @RequestMapping("/")
   public String entryPoint() {
-    return "Welcome to my first spring boot docker application !!!";
+    return "Welcome to my first secured spring boot docker application !!!";
   }
 
   public static void main(String[] args) {

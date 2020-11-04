@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE")
+        classpath("nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0")
     }
 }
 
@@ -12,6 +13,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'license'
 
 bootJar {
     baseName = 'my-spring-boot-app'
@@ -21,7 +23,10 @@ bootJar {
 repositories {
     mavenCentral()
 }
-
+license {
+       header rootProject.file('LICENSE')
+       exclude "**/*.properties"
+    }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

@@ -1,4 +1,6 @@
 FROM openjdk:12-jdk-alpine
-ARG JAR_FILE=build/libs/my-spring-boot-app-*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY build/libs/my-spring-boot-app-0.1.0.jar /usr/app/
+WORKDIR /usr/app
+RUN sh -c 'touch my-spring-boot-app-0.1.0.jar'
+EXPOSE 8443
+ENTRYPOINT ["java","-jar","my-spring-boot-app-0.1.0.jar"]
